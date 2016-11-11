@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var client = mqtt.connect("ws://iot.eclipse.org:80/ws ")
+  var client = mqtt.connect("wss://iot.eclipse.org:443/ws")
   client.subscribe({'nodemcu/relay1': 1, 'nodemcu/relay2': 1, 'nodemcu/relay3': 1, 'nodemcu/relay4': 1})
 
   client.on("message", function (topic, payload) {
