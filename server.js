@@ -1,9 +1,10 @@
+var dotenv = require('dotenv').config();
 var mqtt = require('mqtt');
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://ajay:password@ds031157.mlab.com:31157/mqtt-feed');
+mongoose.connect(process.env.DB_URI);
 var client = mqtt.connect('mqtt://iot.eclipse.org');
 
 var port = process.env.PORT || 8080;
